@@ -22,7 +22,7 @@ const PurchaseTicket = () => {
             <div>
               <label className="text-sm font-medium text-gray-700 block mb-1">Ticket Type</label>
               <select
-                className="w-full border rounded-lg p-2"
+                className="w-full border rounded-lg py-5"
                 value={ticketType}
                 onChange={(e) => setTicketType(e.target.value)}
               >
@@ -40,15 +40,15 @@ const PurchaseTicket = () => {
                 min="1"
                 value={quantity}
                 onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                className="w-full border rounded-lg p-2"
+                className="w-full border rounded-lg py-4 p-2"
               />
             </div>
 
             {/* Summary */}
             {ticketType && (
-              <div className="bg-gray-100 p-3 rounded-lg flex justify-between items-center text-sm font-medium text-gray-800">
-                <span>Total</span>
-                <span>₦{total.toLocaleString()}</span>
+              <div className="bg-gray-100 py-5 p-4 rounded-lg flex justify-between items-center text-sm font-medium text-gray-800">
+                <span className='text-lg'>Total</span>
+                <span className='text-lg font-bold'>₦{total.toLocaleString()}</span>
               </div>
             )}
 
@@ -56,7 +56,7 @@ const PurchaseTicket = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg"
+              className="w-full bg-blue-700 hover:bg-blue-800 text-white py-5 rounded-lg"
             >
               Confirm & Pay
             </button>
@@ -97,7 +97,7 @@ const PurchaseTicket = () => {
         <h3 className="text-xl font-semibold text-center mb-4">Get Tickets</h3>
 
         <button
-          className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg mb-3 transition"
+          className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-5 rounded-lg mb-3 transition"
           onClick={() => setActiveForm('buy')}
         >
           Buy Ticket
@@ -112,7 +112,7 @@ const PurchaseTicket = () => {
         </div>
 
         <button
-          className="w-full border border-blue-500 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-50 transition"
+          className="w-full border border-blue-500 text-blue-700 font-semibold py-5 rounded-lg hover:bg-blue-50 transition"
           onClick={() => setActiveForm('support')}
         >
           Contact Support
