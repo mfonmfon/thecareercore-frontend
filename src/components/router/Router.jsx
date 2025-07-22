@@ -5,6 +5,8 @@ import TheCareerCoreLandingPage from "../../pages/home/TheCareerCoreLandingPage"
 import AttendeesRegistrationCompletion from '../../auth/successmessage/AttendeesRegisterationSuccessPage'
 import TicketHerosection from "../ticketherosection/TicketHerosection";
 import TicketPurchaseCard from "../ticketpurchase/TicketPurchaseCard";
+import NotFound from "../../pages/notfoundpage/NotFound";
+import GuidePage from "../../pages/guide/GuidePage";
 
 
 const THECAREERCOREROUTES = [
@@ -25,6 +27,14 @@ const THECAREERCOREROUTES = [
   {
     path: '/becomeasponsor',
     element: <BecomeASponsor/>
+  },
+  {
+    path: '/notfound',
+    element: <NotFound/>
+  },
+  {
+    path: '/guide',
+    element: <GuidePage/>
   },
   {
     path: '/register',

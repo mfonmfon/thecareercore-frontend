@@ -61,24 +61,15 @@ Limited tickets available. Book now.`;
         <span className="mr-2">Saturday, Sept 27, 2025 — 9:00AM – 5:00PM</span>
       </div>
 
-
-        {/* Tags */}
-        <div className="flex gap-3 mb-6">
-          <span className="rounded-lg bg-black text-white px-3 py-1 text-xs font-medium">Penthouse</span>
-          <span className="rounded-lg bg-black text-white px-3 py-1 text-xs font-medium">Government papers</span>
-        </div>
+       
 
         {/* Info Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 rounded-xl py-6 px-4 mb-8">
         <div className="flex items-center gap-2 mb-4 md:mb-0">
-          <span className="text-2xl font-bold text-gray-900 mr-2">₦10,000 – ₦15,000</span>
+          <span className="text-2xl font-bold text-gray-900 mr-2">₦10,000</span>
           <span className="text-xs font-semibold text-purple-700 bg-purple-100 px-2 py-1 rounded">Early bird pricing</span>
         </div>
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-2 text-gray-700"><FaSpeakerDeck size={22}/> <span className="font-medium">10 Speakers</span></div>
-          <div className="flex items-center gap-2 text-gray-700"><FaPlus size={22}/> <span className="font-medium">10+ Sessions</span></div>
-          <div className="flex items-center gap-2 text-gray-700"><FaPeopleArrows size={22}/> <span className="font-medium">500+ Attendees</span></div>
-        </div>
+       
       </div>
 
 

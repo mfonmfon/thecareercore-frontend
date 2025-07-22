@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
-// import styles from './TicketHerosection.module.css'
+
 
 const TicketHerosection = () => {
   return (
-    <div className={` bg-gradient-to-br from-blue-900 via-black to-blue-900 relative w-full min-h-[35vh] sm:min-h-[50vh] md:min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 lg:pt-32 xl:pt-40`}>
-      {/* Overlay */}
+    <div className={` bg-gradient-to-br from-blue-900 via-black to-blue-900 relative w-full min-h-[35vh] sm:min-h-[50vh]  flex items-center justify-center py-12 sm:py-12 md:py-20 lg:pt-32 xl:pt-40`}>
+      
       <div className="absolute inset-0 bg-black/40" />
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-19">

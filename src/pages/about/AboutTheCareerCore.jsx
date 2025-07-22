@@ -2,37 +2,60 @@ import React from 'react'
 import TheCareerCoreHeader from '../../components/thecareercoreheader/TheCareerCoreHeader'
 import PastEventPictures from '../../assets/images/speakers/IMG_4790.PNG'
 import TheCareerCoreFooter from '../../components/thecareercorefooter/TheCareerCoreFooter'
+import { FaUsers, FaChalkboardTeacher, FaNetworkWired, FaLightbulb } from 'react-icons/fa';
+import FeatureCard from '../../components/featurecard/FeatureCard';
+
+
 
 const AboutTheCareerCore = () => {
   return (
     <>
-    <TheCareerCoreHeader/>
-    <div className='w-full '>
-      <div className=' bg-gradient-to-br from-blue-900 via-black to-blue-900 py-40  '>
-        <h1 className='text-white  ml-25 text-6xl font-bold '>ABOUT THE CAREER CORE</h1>
-        <p className='text-white ml-25 mt-7'>is an annual career conference designed to equip and empower young professionals to grow, lead, <br/>and thrive in today’s ever-evolving work environment.
-Launched in 2024 under the name "Idea to Impact",<br/> the conference debuted as a solution-driven gathering for young people seeking clarity, structure, and strategy<br/> for their career journeys. With strong feedback and a growing community, the event has now evolved into The Career Core,<br/> a central space where professionals discover the tools, mindsets, and networks needed to accelerate their career growth.
-TCC is more than a conference. It’s a movement.</p>
-      </div>
-      
-      <div className='max-w-8xl mx-auto px-6 sm:px-12 lg:px-20 py-12 flex flex-col lg:flex-row items-center justify-between gap-12' >      
-
-        {/* Text Section */}
-        <div className="lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
-              The Career Core Founder: Mayowa Adebayo
-            </h2>
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6">
-                  {`This year’s conference will explore the skills and strategies young professionals need to thrive in today’s world of work. From positioning yourself as a leader, to standing out online, to leveraging artificial intelligence, it’s 
-                  a blueprint for long-term relevance and impact. 
-                  To build a generation of career-intentional leaders who are equipped with the tools, 
-                  community, and confidence to thrive globally..`}
-              </p>
-                <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
-                  Learn More
-                </button>
-              </div>
-      
+      <TheCareerCoreHeader/>
+      {/* Modern Hero Section inspired by Furnizen */}
+      <section className="w-full bg-white py-16 px-4 mt-8 md:mt-14">
+        <div className="max-w-8xl  px-6 sm:px-12 lg:px-20 py-12 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          {/* Left: Headline and CTA */}
+          <div className="flex-1 flex flex-col items-start justify-center text-left">
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+              ABOUT CAREER CORE
+            </h1>
+            <p className="text-gray-600 text-lg mb-8 max-w-xl">
+              Experience a transformative career conference designed to equip and empower young professionals to grow, lead, and thrive. Discover clarity, structure, and strategy for your career journey in a vibrant, supportive community.
+            </p>
+            <div className="flex gap-4 mb-4">
+              <button className="px-7 py-5 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition">Register Now</button>
+              <button className="px-7 py-5 bg-gray-100 text-blue-700 font-semibold rounded-lg shadow hover:bg-blue-200 transition">Explore Program</button>
+            </div>
+          </div>
+          {/* Right: Hero Image */}
+          <div className="flex-1 flex justify-center">
+            <img
+              src={PastEventPictures}
+              alt="The Career Core Event"
+              className="w-[300px] md:w-[600px] h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+        <FeatureCard  />
+      </section>
+      {/* Founder and rest of the page remain unchanged */}
+      <div className='w-full '>
+        <div className='max-w-8xl mx-auto px-6 sm:px-12 lg:px-20 py-12 flex flex-col lg:flex-row items-center justify-between gap-12' >      
+          {/* Text Section */}
+          <div className="lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
+                The Career Core Founder: Mayowa Adebayo
+              </h2>
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6">
+                    {`This year’s conference will explore the skills and strategies young professionals need to thrive in today’s world of work. From positioning yourself as a leader, to standing out online, to leveraging artificial intelligence, it’s 
+                    a blueprint for long-term relevance and impact. 
+                    To build a generation of career-intentional leaders who are equipped with the tools, 
+                    community, and confidence to thrive globally..`}
+                </p>
+                  <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+                    Learn More
+                  </button>
+                </div>
               {/* Image Section */}
               <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
                 <img
@@ -41,7 +64,7 @@ TCC is more than a conference. It’s a movement.</p>
                   alt="Expanding The Reach"
                 />
             </div>
-        </div>
+      </div>
     </div>
     <TheCareerCoreFooter/>
     </>
