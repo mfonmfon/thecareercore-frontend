@@ -13,7 +13,7 @@ const TheCareerCoreFooter = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-15">
      <div className='flex justify-center items-center mb-19'>
-      <h1 className='text-8xl'> THE CAREER CORE 2025</h1>
+      <h1 className='text-5xl sm:text-8xl'> THE CAREER CORE 2025</h1>
      </div>
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Logo and Description */}

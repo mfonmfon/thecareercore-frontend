@@ -66,7 +66,7 @@ const TheCareerCoreSpeakers = () => {
                 alt={speaker.name}
                 className='w-80 h-65 object-cover'
               />
-
+              
             </div>
             {/* Speaker Info */}
             <div className='p-6 text-left'>
