@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+
 const CounterDownTimes = ({ event }) => {
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(event));
 
@@ -68,7 +69,7 @@ const TimeBlock = ({ label, value }) => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 10, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="text-6xl font-extrabold bg-white text-black w-16 h-16 flex items-center justify-center  "
+          className="text-4xl md:text-6xl font-extrabold bg-white text-black w-16 h-16 flex items-center justify-between"
         >
           {paddedValue}
         </motion.div>

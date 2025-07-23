@@ -12,10 +12,10 @@ const TheCareerCoreHerosection = () => {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-19">
         <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6 md:space-y-4 lg:mt-8 xl:mt-12">
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
             
-            <span className="text-white-400">THE CAREER CORE 25 </span> <br className="hidden sm:block" />
-            <span className="text-4xl text-blue-500">NAVIGATING THE NEW WORLD OF WORK</span>
+            <span className="text-white-400">THE CAREER CORE 25 </span> <br />
+            <span className="text-base md:text-4xl sm:text-4xl text-blue-500">NAVIGATING THE NEW WORLD OF WORK</span>
           </h1>
           ``
           {/* Subheading */}
