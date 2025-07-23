@@ -7,6 +7,7 @@ import TicketHerosection from "../ticketherosection/TicketHerosection";
 import TicketPurchaseCard from "../ticketpurchase/TicketPurchaseCard";
 import NotFound from "../../pages/notfoundpage/NotFound";
 import GuidePage from "../../pages/guide/GuidePage";
+import FounderPage from "../../pages/founderpage/FounderPage";
 
 
 const THECAREERCOREROUTES = [
@@ -51,6 +52,10 @@ const THECAREERCOREROUTES = [
   {
     path:'/purchase-ticket',
     element: <TicketPurchaseCard/>
+  },
+  {
+    path: '/founder',
+    element: <FounderPage/>
   }
 ]
 export default THECAREERCOREROUTES

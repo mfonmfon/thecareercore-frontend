@@ -44,10 +44,10 @@ const TheCareerCoreSpeakers = () => {
     <div className='w-full min-h-screen bg-gradient-to-br from-blue-900 via-black to-blue-900 px-4 md:px-8 lg:px-16 py-16 overflow-hidden'>
       {/* Header Section */}
       <div className='text-center mb-12'>
-        <h1 className='text-4xl md:text-6xl font-bold text-white drop-shadow-lg'>
+        <h1 className='md:text-5xl sm:text-xl font-bold text-white drop-shadow-lg'>
           MEET OUR INFLUENTIAL SPEAKERS FOR 2025!
         </h1>
-        <p className='mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto'>
+        <p className='mt-4 text-base md:text-xl text-gray-200 max-w-2xl mx-auto'>
           Discover insights from industry leaders and explore the principles to transform your career journey.
         </p>
       </div>
