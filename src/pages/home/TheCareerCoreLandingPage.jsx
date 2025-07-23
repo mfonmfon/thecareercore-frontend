@@ -10,12 +10,12 @@ import TheCareerCoreFounder from '../../components/thecareercorefounder/TheCaree
 import CounterDownTimes from '../../components/countdowntimes/CounterDownTimes'
 
 const TheCareerCoreLandingPage = () => {
-  const eventDate = '2025-09-14T16:00:00Z' // Example event date in ISO format
+  // const eventDate = '2025-09-14T16:00:00Z'  // Example event date in ISO format
   return (
     <div>
       <TheCareerCoreHeader/>
       <TheCareerCoreHerosection/>
-      <CounterDownTimes event={eventDate}/>
+      {/* <CounterDownTimes event={eventDate}/> */}
       <TheCareerCoreFounder/>
       <TheCareerCoreSpeakers/>
       <TheCareerCoreAbout/>
