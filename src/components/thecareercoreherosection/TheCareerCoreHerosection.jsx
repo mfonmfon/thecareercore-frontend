@@ -9,7 +9,7 @@ const TheCareerCoreHerosection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-19">
+      <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-19">
         <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6 md:space-y-12 lg:mt-2 xl:mt-4">
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-2xl mb-1  font-bold text-white leading-tight tracking-tight">
