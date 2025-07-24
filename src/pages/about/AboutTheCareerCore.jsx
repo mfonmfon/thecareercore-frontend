@@ -11,10 +11,9 @@ const AboutTheCareerCore = () => {
   return (
     <>
       <TheCareerCoreHeader/>
-      {/* Modern Hero Section inspired by Furnizen */}
       <section className="w-full bg-white py-16 px-4 mt-8 md:mt-14">
         <div className="max-w-8xl  px-6 sm:px-12 lg:px-20 py-12 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Left: Headline and CTA */}
+        
           <div className="flex-1 flex flex-col items-start justify-center text-left">
             <h1 className="text-4xl sm:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
               ABOUT CAREER CORE
@@ -38,10 +37,9 @@ const AboutTheCareerCore = () => {
         </div>
         <FeatureCard  />
       </section>
-      {/* Founder and rest of the page remain unchanged */}
       <div className='w-full '>
         <div className='max-w-8xl mx-auto px-6 sm:px-12 lg:px-20 py-12 flex flex-col lg:flex-row items-center justify-between gap-12' >      
-          {/* Text Section */}
+         
           <div className="lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
               <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
                 The Career Core Founder: Mayowa Adebayo
@@ -56,7 +54,7 @@ const AboutTheCareerCore = () => {
                     Learn More
                   </button>
                 </div>
-              {/* Image Section */}
+
               <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
                 <img
                   className="w-[300px] md:w-[600px] h-auto rounded-lg shadow-lg"
