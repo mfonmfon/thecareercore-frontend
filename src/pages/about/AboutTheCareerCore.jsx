@@ -6,7 +6,6 @@ import { FaUsers, FaChalkboardTeacher, FaNetworkWired, FaLightbulb } from 'react
 import FeatureCard from '../../components/featurecard/FeatureCard';
 
 
-
 const AboutTheCareerCore = () => {
   return (
     <>
@@ -22,8 +21,8 @@ const AboutTheCareerCore = () => {
               Experience a transformative career conference designed to equip and empower young professionals to grow, lead, and thrive. Discover clarity, structure, and strategy for your career journey in a vibrant, supportive community.
             </p>
             <div className="flex gap-4 mb-4">
-              <button className="px-7 py-5 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition">Register Now</button>
-              <button className="px-7 py-5 bg-gray-100 text-blue-700 font-semibold rounded-lg shadow hover:bg-blue-200 transition">Explore Program</button>
+              <button className="px-7 py-2 md:py-5 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition">Register Now</button>
+              <button className="px-7 py-2 md:py-5 bg-gray-100 text-blue-700 font-semibold rounded-lg shadow hover:bg-blue-200 transition">Explore Program</button>
             </div>
           </div>
           {/* Right: Hero Image */}
@@ -31,7 +30,7 @@ const AboutTheCareerCore = () => {
             <img
               src={PastEventPictures}
               alt="The Career Core Event"
-              className="w-[300px] md:w-[600px] h-auto rounded-lg shadow-lg"
+              className="w-[400px] md:w-[600px] h-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -57,7 +56,7 @@ const AboutTheCareerCore = () => {
 
               <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
                 <img
-                  className="w-[300px] md:w-[600px] h-auto rounded-lg shadow-lg"
+                  className="w-[400px] md:w-[600px] h-auto rounded-lg shadow-lg"
                   src={PastEventPictures}
                   alt="Expanding The Reach"
                 />

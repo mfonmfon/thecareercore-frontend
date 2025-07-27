@@ -7,7 +7,7 @@ import TheCareerCorePastEvent from '../../components/thecareercorepastevent/TheC
 import TheCareerCoreCallToAction from '../../components/thecareercorecolltoaction/TheCareerCoreCallToAction'
 import TheCareerCoreFooter from '../../components/thecareercorefooter/TheCareerCoreFooter'
 import TheCareerCoreFounder from '../../components/thecareercorefounder/TheCareerCoreFounder'
-import CounterDownTimes from '../../components/countdowntimes/CounterDownTimes'
+import Sponsors from '../../components/sponsors/Sponsors'
 
 const TheCareerCoreLandingPage = () => {
   // const eventDate = '2025-09-14T16:00:00Z'  // Example event date in ISO format
@@ -15,7 +15,7 @@ const TheCareerCoreLandingPage = () => {
     <div>
       <TheCareerCoreHeader/>
       <TheCareerCoreHerosection/>
-      {/* <CounterDownTimes event={eventDate}/> */}
+     <Sponsors/>
       <TheCareerCoreFounder/>
       <TheCareerCoreSpeakers/>
       <TheCareerCoreAbout/>

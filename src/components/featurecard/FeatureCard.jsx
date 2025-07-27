@@ -1,46 +1,74 @@
-import React from 'react'
-import { FaChalkboardTeacher, FaLightbulb, FaNetworkWired, FaUser, FaUsers } from 'react-icons/fa'
+import React from 'react';
+import {
+  FaUser,
+  FaChalkboardTeacher,
+  FaNetworkWired,
+  FaLightbulb,
+} from 'react-icons/fa';
 
 const featuresData = [
   {
-   icon: <FaUser className="text-blue-600 text-3xl mb-3" />,
-   title: 'Community Networking',
-    description: 'Connect with ambitious peers and industry leaders to expand your professional network.' 
+    icon: <FaUser className="text-white text-xl" />,
+    title: 'Community Networking',
+    description:
+      'Connect with ambitious peers and industry leaders to expand your professional network.',
+    bgColor: 'bg-orange-100',
+    pinColor: 'bg-orange-500',
   },
   {
-    icon: <FaChalkboardTeacher className="text-blue-600 text-3xl mb-3" />,
+    icon: <FaChalkboardTeacher className="text-white text-xl" />,
     title: 'Expert Speakers',
-    description: 'Learn from industry experts and thought leaders who share their insights and knowledge.' 
+    description:
+      'Learn from industry experts and thought leaders who share their insights and knowledge.',
+    bgColor: 'bg-blue-100',
+    pinColor: 'bg-blue-500',
   },
   {
-    icon: <FaNetworkWired className="text-blue-600 text-3xl mb-3" />,
+    icon: <FaNetworkWired className="text-white text-xl" />,
     title: 'Career Growth Tools',
-    description: 'Discover tools and resources to help you advance your career and achieve your goals.'
+    description:
+      'Discover tools and resources to help you advance your career and achieve your goals.',
+    bgColor: 'bg-purple-100',
+    pinColor: 'bg-purple-500',
   },
   {
-    icon: <FaLightbulb className="text-blue-600 text-3xl mb-3" />,
+    icon: <FaLightbulb className="text-white text-xl" />,
     title: 'Inspiring Innovation',
-    description: 'Ignite your creativity and discover new ways to stand out in a changing world.'
-  }
-]
+    description:
+      'Ignite your creativity and discover new ways to stand out in a changing world.',
+    bgColor: 'bg-pink-100',
+    pinColor: 'bg-pink-500',
+  },
+];
+
 const FeatureCard = () => {
   return (
-    <div className="w-full bg-white py-1 px-4 mt-8 md:mt-10">
-    <div className='max-w-8xl px-10 sm:px-7 lg:px-20 py-5 mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16'>
-      {/* Feature Cards */}
-        <div className=" grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto ">
-          {featuresData.map((features, index)=>{
-            return(
-              <div className='bg-gray-50 rounded-xl p-20 flex flex-col items-center text-center shadow-sm' key={index}>
-                <span>{features.icon}</span>
-                <h3 className='font-bold text-lg mb-1'>{features.title}</h3>
-                <p className="text-gray-500 text-sm" >{features.description}</p>
-              </div>
-            )})}
-        </div>
-    </div>
-    </div>
-  )
-}
+    <section className="w-full bg-white py-16 px-4 sm:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {featuresData.map((feature, index) => (
+          <div
+            key={index}
+            className={`rounded-2xl shadow-md p-6 ${feature.bgColor} hover:shadow-xl transition duration-300`}
+          >
+            {/* Icon Circle */}
+            <div
+              className={`w-12 h-12 flex items-center justify-center rounded-full ${feature.pinColor} mb-4`}
+            >
+              {feature.icon}
+            </div>
 
-export default FeatureCard
+            {/* Content */}
+            <h3 className="text-lg font-bold text-gray-800 mb-2">
+              {feature.title}
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default FeatureCard;
