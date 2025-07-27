@@ -33,7 +33,7 @@ const TheCareerCoreAbout = () => {
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 md:p-8">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-lg md:text-xl font-bold text-blue-600 mb-4">
-                Upkilling, leadership, branding.
+                Upkilling, leadership, branding
               </h3>
               <p className="text-gray-600 text-base md:text-lg  leading-relaxed">
                 Focusing on upskilling, leadership, and personal branding is essential for career growth. Developing new skills, strengthening leadership abilities, and building a strong personal brand
@@ -45,7 +45,7 @@ const TheCareerCoreAbout = () => {
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 md:p-8">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-lg md:text-xl font-bold text-blue-600 mb-4">
-               Transitioning into new industries or roles.
+               Transitioning into new industries or roles
               </h3>
               <p className="text-gray-600 text-base md:text-lg  leading-relaxed">
                 If you're exploring a career pivot, The Career Core equips you with practical strategies, 
@@ -57,7 +57,7 @@ const TheCareerCoreAbout = () => {
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 md:p-8">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-lg md:text-xl font-bold text-blue-600 mb-4">
-                Build a global professional network.
+                Build a global professional network
               </h3>
               <p className="text-gray-600 text-base md:text-lg  leading-relaxed">
                 
@@ -71,7 +71,7 @@ const TheCareerCoreAbout = () => {
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 md:p-8">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-lg md:text-xl font-bold text-blue-600 mb-4">
-                Career clarity and growth.
+                Career clarity and growth
               </h3>
               <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                 Seeking clarity in your career path and opportunities for growth is essential for achieving your professional goals. By exploring your strengths, interests, and goals, 

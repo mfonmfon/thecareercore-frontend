@@ -1,39 +1,92 @@
-import React, { useState } from 'react'
-import AttendeesRegistrationBackgroundImage from '../../assets/images/AttendeesBackgroundImage.jpeg'
-import { FaArrowRight, FaClosedCaptioning, FaJira, FaLocationArrow, FaMailBulk, FaMap, FaMapPin, FaMapSigns, FaPhone, FaSearchLocation, FaUser } from 'react-icons/fa'
-import TheCareerCoreFooter from '../../components/thecareercorefooter/TheCareerCoreFooter'
-import TheCareerCoreHeader from '../../components/thecareercoreheader/TheCareerCoreHeader'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import AttendeesRegistrationBackgroundImage from '../../assets/images/AttendeesBackgroundImage.jpeg';
+import {
+  FaArrowRight,
+  FaJira,
+  FaLocationArrow,
+  FaMailBulk,
+  FaPhone,
+  FaUser,
+} from 'react-icons/fa';
+import TheCareerCoreFooter from '../../components/thecareercorefooter/TheCareerCoreFooter';
+import TheCareerCoreHeader from '../../components/thecareercoreheader/TheCareerCoreHeader';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AttendeesRegistration = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleRegistrationSubmit = (event) => {
-    event.preventDefault()
-    console.log('Form submitted')
-  }
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    location: '',
+    phoneNumber: '',
+    occupation: '',
+  });
 
-  const handleRegistrationInputChange = () => {
-    console.log('Test')
-  }
+  const handleRegistrationInputChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const isValidPhoneNumber = (phone) => {
+    return /^(\+234|0)[789][01]\d{8}$/.test(phone);
+  };
+
+  const handleRegistrationSubmit = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    // Validate phone number before sending
+    if (!isValidPhoneNumber(formData.phoneNumber)) {
+      toast.error('Invalid Nigerian phone number format');
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      console.log('Submitting payload:', formData);
+      const response = await axios.post(
+        'http://localhost:8080/api/v1/attendees/register',
+        formData
+      );
+
+      if (response.status === 201) {
+        toast.success('Registration successful! Redirecting...');
+        setTimeout(() => {
+          navigate('https://selar.com/575777n591');
+        }, 2000);
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message || 'Server error. Please check your connection.'
+      );
+      console.error('Registration error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
       <TheCareerCoreHeader />
+      <ToastContainer position="top-right" />
       <div className="min-h-screen flex">
-        {/* Left Side - Image Section */}
+        {/* Left Image */}
         <div className="hidden lg:block w-1/2 relative">
-          <div className="absolute inset-0">
-            <img
-              src={AttendeesRegistrationBackgroundImage}
-              alt="Background"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <img
+            src={AttendeesRegistrationBackgroundImage}
+            alt="Background"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
 
-        {/* Right Side - Form Section */}
+        {/* Right Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
           <div className="w-full max-w-md">
             <div className="text-center mb-8">
@@ -45,67 +98,67 @@ const AttendeesRegistration = () => {
             <form onSubmit={handleRegistrationSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {/* First Name */}
-                <div className="space-y-2">
+                <div>
                   <label className="block text-sm font-medium text-gray-700">First Name</label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaUser className="h-5 w-5 text-gray-400" />
-                    </div>
+                    <FaUser className="absolute top-3 left-3 text-gray-400" />
                     <input
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
                       type="text"
-                      placeholder="Vanessa"
                       name="firstName"
                       required
+                      value={formData.firstName}
+                      onChange={handleRegistrationInputChange}
+                      placeholder="Vanessa"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
 
                 {/* Last Name */}
-                <div className="space-y-2">
+                <div>
                   <label className="block text-sm font-medium text-gray-700">Last Name</label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaUser className="h-5 w-5 text-gray-400" />
-                    </div>
+                    <FaUser className="absolute top-3 left-3 text-gray-400" />
                     <input
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
                       type="text"
-                      placeholder="Benard"
-                      name="lastname"
+                      name="lastName"
                       required
+                      value={formData.lastName}
+                      onChange={handleRegistrationInputChange}
+                      placeholder="Benard"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
 
                 {/* Location */}
-                <div className="space-y-2">
+                <div>
                   <label className="block text-sm font-medium text-gray-700">Location</label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaLocationArrow className="h-5 w-5 text-gray-400" />
-                    </div>
+                    <FaLocationArrow className="absolute top-3 left-3 text-gray-400" />
                     <input
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
                       type="text"
-                      placeholder="Yaba"
                       name="location"
                       required
+                      value={formData.location}
+                      onChange={handleRegistrationInputChange}
+                      placeholder="Yaba"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
                 </div>
 
                 {/* Occupation */}
-                <div className="space-y-2 ">
+                <div>
                   <label className="block text-sm font-medium text-gray-700">What Do You Do?</label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <FaJira className="h-5 w-5 text-gray-400" />
-                    </div>
+                    <FaJira className="absolute top-3 left-3 text-gray-400" />
                     <select
-                      className="w-full pl-10 pr-10 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 bg-white appearance-none"
                       name="occupation"
                       required
+                      value={formData.occupation}
+                      onChange={handleRegistrationInputChange}
+                      className="w-full pl-10 pr-10 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 bg-white"
                     >
                       <option value="">Select your profession</option>
                       <option value="student">Student</option>
@@ -118,54 +171,40 @@ const AttendeesRegistration = () => {
                       <option value="financial-consultant">Financial Consultant</option>
                       <option value="virtual-assistant">Virtual Assistant</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 pr-3 flex items-center">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.355a.75.75 0 011.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="space-y-2">
+              <div>
                 <label className="block text-sm font-medium text-gray-700">Email</label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FaMailBulk className="h-5 w-5 text-gray-400" />
-                  </div>
+                  <FaMailBulk className="absolute top-3 left-3 text-gray-400" />
                   <input
-                    className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
                     type="email"
-                    placeholder="example@example.com"
                     name="email"
                     required
+                    value={formData.email}
+                    onChange={handleRegistrationInputChange}
+                    placeholder="example@example.com"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
 
-              {/* Phone */}
-              <div className="space-y-2">
+              {/* Phone Number */}
+              <div>
                 <label className="block text-sm font-medium text-gray-700">Phone Number</label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <FaPhone className="h-5 w-5 text-gray-400" />
-                  </div>
+                  <FaPhone className="absolute top-3 left-3 text-gray-400" />
                   <input
-                    className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
                     type="tel"
-                    placeholder="Phone number"
-                    name="phone"
+                    name="phoneNumber"
                     required
+                    value={formData.phoneNumber}
+                    onChange={handleRegistrationInputChange}
+                    placeholder="e.g. +2348147995494 or 08147995494"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -174,7 +213,6 @@ const AttendeesRegistration = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                onClick={()=> navigate('/purchase-ticket')}
                 className={`w-full py-3 px-4 rounded-xl text-white font-medium transition duration-200 transform hover:scale-[1.02] ${
                   isLoading
                     ? 'bg-gray-400 cursor-not-allowed'
@@ -183,7 +221,7 @@ const AttendeesRegistration = () => {
               >
                 <div className="flex items-center justify-center">
                   {isLoading ? (
-                    <span className="animate-spin border-2 border-white border-t-transparent rounded-full h-5 w-5"></span>
+                    <span className="animate-spin border-2 border-white border-t-transparent rounded-full h-5 w-5" />
                   ) : (
                     <>
                       <span>Proceed</span>
@@ -198,7 +236,7 @@ const AttendeesRegistration = () => {
       </div>
       <TheCareerCoreFooter />
     </>
-  )
-}
+  );
+};
 
-export default AttendeesRegistration
+export default AttendeesRegistration;
