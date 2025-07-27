@@ -36,7 +36,7 @@ const sponsorsData = [
 
 const Sponsors = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-17 bg-white">
       <h2 className="text-center text-2xl md:text-6xl font-semibold mb-20 text-gray-800">Our Sponsors</h2>
       <Marquee
         gradient={false}
