@@ -70,8 +70,8 @@ const TheCareerCoreSpeakers = () => {
             </div>
             {/* Speaker Info */}
             <div className='p-6 text-left'>
-              <h2 className='text-2xl font-semibold text-gray-300'>{speaker.name}</h2>
-              <p className='mt-2 text-lg text-gray-400 font-medium'>{speaker.jobTitle}</p>
+              <h2 className='text-lg md:text-xl font-semibold text-gray-300'>{speaker.name}</h2>
+              <p className='mt-2 text-base md:text-xl text-gray-400 font-medium'>{speaker.jobTitle}</p>
             </div>
           </div>
         ))}
