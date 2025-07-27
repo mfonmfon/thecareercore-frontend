@@ -51,13 +51,13 @@ const TheCareerCoreSpeakers = () => {
           Discover insights from industry leaders to transform your career journey.
         </p>
       </div>
-
+      
       {/* Speakers Grid */}
       <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-4 '>
         {speakersData.map((speaker, index) => (
           <div
             key={index}
-            className=' rounded-xl shadow-2xl hover:scale-105 transform transition duration-300 ease-in-out hover:shadow-3xl'
+            className='rounded-xl duration-300 '
           >
             {/* Image Container */}
             <div className='p-4 flex justify-center'>
