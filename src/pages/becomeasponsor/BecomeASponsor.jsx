@@ -3,98 +3,62 @@ import TheCareerCoreHeader from '../../components/thecareercoreheader/TheCareerC
 import TheCareerCoreFooter from '../../components/thecareercorefooter/TheCareerCoreFooter';
 import SponsorBackgroundImage from '../../assets/images/SponsorBackgroundImage.jpeg';
 import { FaArrowRight, FaMailBulk, FaPen, FaPhone, FaUser } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const BecomeASponsor = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({});
-  const [userFormData, setUserFormData] = useState({
+  const navigate = useNavigate();
+  const [sponsorFormData, setSponsorFormData] = useState({
     firstName: '',
     lastName: '',
-    businessEmail: '',
+    companyEmail: '',
     companyName: '',
-    companyDescription: '',
     phoneNumber: '',
-    howDidYouHear: '',
+    companyDescription: '',
+    whereYouHeardCareerCore: '',
   });
 
-  const handleRegistrationInputChange = (event) => {
-    const { name, value } = event.target;
-    setUserFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-    // Clear error for this field when user starts typing
-    if (formErrors[name]) {
-      setFormErrors((prevErrors) => ({
-        ...prevErrors,
-        [name]: '',
-      }));
-    }
-  };
-
-  const validateField = () => {
-    const errors = {};
-    if (!userFormData.firstName) errors.firstName = 'First name is required';
-    if (!userFormData.lastName) errors.lastName = 'Last name is required';
-    if (!userFormData.businessEmail) {
-      errors.businessEmail = 'Business email is required';
-    } else if (!/\S+@\S+\.\S+/.test(userFormData.businessEmail)) {
-      errors.businessEmail = 'Invalid email format';
-    }
-    if (!userFormData.companyName) errors.companyName = 'Company name is required';
-    if (!userFormData.companyDescription) errors.companyDescription = 'Company description is required';
-    if (!userFormData.phoneNumber) {
-      errors.phoneNumber = 'Phone number is required';
-    } else if (!/^\d{10,}$/.test(userFormData.phoneNumber)) {
-      errors.phoneNumber = 'Invalid phone number (minimum 10 digits)';
-    }
-    if (!userFormData.howDidYouHear) errors.howDidYouHear = 'This field is required';
-    return errors;
-  };
-
- const handleRegistrationSubmit = async (event) => {
-  event.preventDefault();
-  
-  const target = event.target;
-  
-  const date = new Date();
-  const inputValue = {
-    'Company Name': target.companyName.value,
-    'Company Description': target.companyDescription.value,
-    'Business Email': target.businessEmail.value,
-    'First Name': target.firstName.value,
-    'Last Name': target.lastName.value,
-    'Phone Number': target.phoneNumber.value,
-    'How did you hear about us?': target.howDidYouHear.value,
-    'Created At': date.toLocaleString(),
-  };
-  console.log(inputValue);
-
-  const APP_ID = 'AKfycbxV9Nl29tatMYl4WePjttscRSMEfRbs5URa-YWRwUuxT441MWEhTx9oSbUgl1MPH6kurQ'; // Replace with your actual Google Apps Script ID
-  const baseURL = `https://script.google.com/macros/s/${APP_ID}/exec`;
-  
-  const formData = new FormData();
-  Object.keys(inputValue).forEach((key) => {
-    formData.append(key, inputValue[key]);
-  });
-
-  try {
-    const res = await fetch(baseURL, {
-      method: 'POST',
-      body: formData,
-    });
-    if (res.ok) {
-      console.log('Request was successful:', res);
-    } else {
-      console.log('Request Failed:', res);
-    }
-  } catch (e) {
-    console.error('Error during fetch:', e);
+  const handleSponsorInputChange = (event)=>{
+    setSponsorFormData({...sponsorFormData, [event.target.name]: event.target.value})
   }
-};
+  const isValidPhoneNumber = (phoneNumber) => {
+    const phoneRegex = /^(\+234|0)[789][01]\d{8}$/;
+    return phoneRegex.test(phoneNumber);
+  }
+  const handleSponsorSubmit = async (event)=>{
+    event.preventDefault();
+    setIsLoading(true);
+    if(!isValidPhoneNumber(sponsorFormData.phoneNumber)){
+      toast.error('Invalid phone number');
+      setIsLoading(false);
+      return;
+    }
+    try{
+      console.log('Submitting payload:', sponsorFormData);
+      const response = await axios.post('http://localhost:8080/api/v1/sponsors/become-sponsor', sponsorFormData); 
+      if(response.status === 201){
+        toast.success('Registration successful! Redirecting...');
+        setTimeout(()=>{
+          navigate('/')
+        })
+      }
+    }
+    catch(error){
+      console.log('Error:', error);
+      toast.error(error.response?.data?.message || 'Server error. Please check your connection.');
+      // setFormErrors(error.response?.data || {}); 
+    }finally{
+      setIsLoading(false);
+    }
+  }
   return (
     <>
       <TheCareerCoreHeader />
+      <ToastContainer position="top-right" />
       <div className="w-full min-h-screen">
         
         {/* Sponsors form */}
@@ -121,7 +85,7 @@ const BecomeASponsor = () => {
                 </div>
               )}
 
-              <form onSubmit={handleRegistrationSubmit} className="space-y-6">
+              <form onSubmit={handleSponsorSubmit}  className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   
                   <div className="space-y-2">
@@ -134,11 +98,11 @@ const BecomeASponsor = () => {
                         className={`w-full pl-10 pr-4 py-3 rounded-xl border ${
                           formErrors.businessEmail ? 'border-red-500' : ''
                         } focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200`}
-                        type="email"
-                        placeholder="Business email"
-                        name="businessEmail"
-                        value={userFormData.businessEmail}
-                        onChange={handleRegistrationInputChange}
+                        type="companyEmail"
+                        placeholder="co@gmail.com"
+                        name="companyEmail"
+                        value={sponsorFormData.businessEmail}
+                        onChange={handleSponsorInputChange}
                         required
                       />
                       {formErrors.businessEmail && (
@@ -160,8 +124,8 @@ const BecomeASponsor = () => {
                           type="text"
                           placeholder="Vanessa"
                           name="firstName"
-                          value={userFormData.firstName}
-                          onChange={handleRegistrationInputChange}
+                          value={sponsorFormData.firstName}
+                          onChange={handleSponsorInputChange}
                           required
                         />
                       {formErrors.firstName && (
@@ -169,6 +133,7 @@ const BecomeASponsor = () => {
                       )}
                     </div>
                   </div>
+
 
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-gray-500">Last Name</label>
@@ -183,8 +148,8 @@ const BecomeASponsor = () => {
                         type="text"
                         placeholder="Benard"
                         name="lastName"
-                        value={userFormData.lastName}
-                        onChange={handleRegistrationInputChange}
+                        value={sponsorFormData.lastName}
+                        onChange={handleSponsorInputChange}
                         required
                       />
                       {formErrors.lastName && (
@@ -204,10 +169,10 @@ const BecomeASponsor = () => {
                           formErrors.companyName ? 'border-red-500' : ''
                         } focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200`}
                         type="text"
-                        placeholder="Helium health"
+                        placeholder="Cowrywise"
                         name="companyName"
-                        value={userFormData.companyName}
-                        onChange={handleRegistrationInputChange}
+                        value={sponsorFormData.companyName}
+                        onChange={handleSponsorInputChange}
                         required
                       />
                       {formErrors.companyName && (
@@ -216,7 +181,6 @@ const BecomeASponsor = () => {
                     </div>
                   </div>
                 </div>
-
 
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-gray-500">Company Description</label>
@@ -231,8 +195,8 @@ const BecomeASponsor = () => {
                       type="text"
                       placeholder="Helium Health is a..."
                       name="companyDescription"
-                      value={userFormData.companyDescription}
-                      onChange={handleRegistrationInputChange}
+                      value={sponsorFormData.companyDescription}
+                      onChange={handleSponsorInputChange}
                       required
                     />
                     {formErrors.companyDescription && (
@@ -254,8 +218,8 @@ const BecomeASponsor = () => {
                       type="tel"
                       placeholder="090"
                       name="phoneNumber"
-                      value={userFormData.phoneNumber}
-                      onChange={handleRegistrationInputChange}
+                      value={sponsorFormData.phoneNumber}
+                      onChange={handleSponsorInputChange}
                       required
                     />
                     {formErrors.phoneNumber && (
@@ -278,9 +242,9 @@ const BecomeASponsor = () => {
                       } focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200`}
                       type="text"
                       placeholder="Tell us"
-                      name="howDidYouHear"
-                      value={userFormData.howDidYouHear}
-                      onChange={handleRegistrationInputChange}
+                      name="whereYouHeardCareerCore"
+                      value={sponsorFormData.howDidYouHear}
+                      onChange={handleSponsorInputChange}
                       required
                     />
                     {formErrors.howDidYouHear && (

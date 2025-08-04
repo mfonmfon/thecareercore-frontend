@@ -57,7 +57,8 @@ const AttendeesRegistration = () => {
       if (response.status === 201) {
         toast.success('Registration successful! Redirecting...');
         setTimeout(() => {
-          navigate('https://selar.com/575777n591');
+          navigate('/success');
+          navigate('/https://selar.com/575777n591');
         }, 2000);
       } else {
         toast.error('Something went wrong. Please try again.');

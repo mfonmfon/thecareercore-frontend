@@ -4,8 +4,6 @@ import TccLogo from '../../assets/images/TCC logo.png';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 
-
-
 const TheCareerCoreHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
@@ -17,9 +15,7 @@ const TheCareerCoreHeader = () => {
 
   const toggleSignup = () => {
     setIsSignupOpen(!isSignupOpen);
-  };
-
-  
+  };  
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm w-full">
@@ -120,14 +116,14 @@ const TheCareerCoreHeader = () => {
               FAQ
             </Link>
             <Link
-              to="/faq"
+              to="/guide"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
               onClick={toggleMenu}
             >
               Partners
             </Link>
             <Link
-              to="/book"
+              to="/notfound"
               className="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:text-blue-700 hover:bg-gray-50 transition-colors duration-200"
               onClick={toggleMenu}
             >
