@@ -139,7 +139,7 @@ const TheCareerCoreHeader = () => {
                 Register 
               </Link>
               <Link
-                to="/register/therapist"
+                to="/becomeasponsor"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
                 onClick={toggleMenu}
               >

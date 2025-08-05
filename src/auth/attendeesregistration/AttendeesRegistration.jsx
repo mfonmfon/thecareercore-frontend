@@ -53,12 +53,12 @@ const AttendeesRegistration = () => {
         'http://localhost:8080/api/v1/attendees/register',
         formData
       );
-
+      console.log("RESPONSE ->{}", response);
       if (response.status === 201) {
         toast.success('Registration successful! Redirecting...');
         setTimeout(() => {
-          navigate('/success');
-          navigate('/https://selar.com/575777n591');
+          // navigate('/success');
+          window.location.href = 'https://selar.com/575777n591';
         }, 2000);
       } else {
         toast.error('Something went wrong. Please try again.');
