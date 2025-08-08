@@ -50,14 +50,14 @@ const AttendeesRegistration = () => {
     try {
       console.log('Submitting payload:', formData);
       const response = await axios.post(
-        'http://localhost:8080/api/v1/attendees/register',
+        'https://thecareercore-backend.onrender.com/api/v1/attendees/register',
         formData
       );
       console.log("RESPONSE ->{}", response);
       if (response.status === 201) {
         toast.success('Registration successful! Redirecting...');
         setTimeout(() => {
-          // navigate('/success');
+          navigate('/success');
           window.location.href = 'https://selar.com/575777n591';
         }, 2000);
       } else {
@@ -72,7 +72,6 @@ const AttendeesRegistration = () => {
       setIsLoading(false);
     }
   };
-
   return (
     <>
       <TheCareerCoreHeader />

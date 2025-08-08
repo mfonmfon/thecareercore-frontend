@@ -39,7 +39,7 @@ const BecomeASponsor = () => {
     }
     try{
       console.log('Submitting payload:', sponsorFormData);
-      const response = await axios.post('http://localhost:8080/api/v1/sponsors/become-sponsor', sponsorFormData); 
+      const response = await axios.post('https://thecareercore-backend.onrender.com/api/v1/sponsors/become-sponsor', sponsorFormData); 
       if(response.status === 201){
         toast.success('Registration successful! Redirecting...');
         setTimeout(()=>{
