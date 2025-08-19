@@ -33,7 +33,7 @@ const TheCareerCoreAbout = () => {
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 md:p-8">
             <div className="flex flex-col items-center text-center">
               <h3 className="text-lg md:text-xl font-bold text-blue-600 mb-4">
-                Upkilling, leadership, branding
+                Upskilling, leadership, branding
               </h3>
               <p className="text-gray-600 text-base md:text-lg  leading-relaxed">
                 Focusing on upskilling, leadership, and personal branding is essential for career growth. Developing new skills, strengthening leadership abilities, and building a strong personal brand

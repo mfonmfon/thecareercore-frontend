@@ -61,9 +61,6 @@ const THECAREERCOREROUTES = [
     path: 'success',
     element: <AttendeesRegistrationCompletion/>
   },
-  {
-    path: '/https://selar.com/575777n591',
-    element: 'https://selar.com/575777n591'
-  }
+ 
 ]
 export default THECAREERCOREROUTES

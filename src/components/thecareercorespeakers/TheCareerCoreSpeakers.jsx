@@ -3,38 +3,38 @@ import UnknownSpeakerImage from '../../assets/images/UnknownFaceImage.jpg'
 
 const speakersData = [
   {
-    name: 'Lotanna Aunoforo',
-    jobTitle: 'Founder, The Career Core',
+    name: 'Coming soon',
+    // jobTitle: 'Coming soon',
     speakersImage: UnknownSpeakerImage,
   },
   {
-    name: 'Pst Mayowa',
-    jobTitle: 'Founder, The Career Core',
+    name: 'Coming soon',
+    // jobTitle: 'Founder, The Career Core',
     speakersImage: UnknownSpeakerImage,
   },
   {
-    name: 'Jane Smith',
-    jobTitle: 'CTO, Future Tech',
+    name: 'Coming soon',
+    // jobTitle: 'CTO, Future Tech',
     speakersImage: UnknownSpeakerImage,
   },
   {
-    name: 'Michael Johnson',
-    jobTitle: 'Head of Marketing, Global Brands',
+    name: 'Coming sooon',
+    // jobTitle: 'Head of Marketing, Global Brands',
     speakersImage: UnknownSpeakerImage,
   },
   {
-    name: 'Michael Johnson',
-    jobTitle: 'Head of Marketing, Global Brands',
+    name: 'Coming soon',
+    // jobTitle: 'Head of Marketing, Global Brands',
     speakersImage: UnknownSpeakerImage,
   },
   {
-    name: 'Michael Johnson',
-    jobTitle: 'Head of Marketing, Global Brands',
+    name: 'Coming soon',
+    // jobTitle: 'Head of Marketing, Global Brands',
     speakersImage: UnknownSpeakerImage,
   },
   {
-    name: 'Michael Johnson',
-    jobTitle: 'Head of Marketing, Global Brands',
+    name: 'Coming soon',
+    // jobTitle: 'Head of Marketing, Global Brands',
     speakersImage: UnknownSpeakerImage,
   },
 ]

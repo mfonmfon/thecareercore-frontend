@@ -13,12 +13,12 @@ const TheCareerCoreFounder = () => {
             <p className="text-base sm:text-xl text-gray-600 leading-relaxed mb-6">
             This year’s conference will explore the key strategies young professionals need to thrive. From leadership to AI, we’re equipping a new generation to succeed globally.
             </p>
-            <a
+            {/* <a
               href="/founder" // <-- Update this if you're using React Router
               className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Learn More
-            </a>
+            </a> */}
           </div>
 
         {/* Image Section */}

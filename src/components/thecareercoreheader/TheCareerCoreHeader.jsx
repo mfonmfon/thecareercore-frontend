@@ -37,7 +37,7 @@ const TheCareerCoreHeader = () => {
             <Link to="/about" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
               About Us
             </Link>
-            <Link to="/faq" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+            <Link to="/notfound" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
               FAQ
             </Link>
             <Link to="/partner" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
@@ -109,7 +109,7 @@ const TheCareerCoreHeader = () => {
               About Us
             </Link>
             <Link
-              to="/faq"
+              to="/notfound"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
               onClick={toggleMenu}
             >

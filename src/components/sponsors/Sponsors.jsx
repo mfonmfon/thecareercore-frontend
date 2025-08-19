@@ -12,26 +12,6 @@ const sponsorsData = [
     image: ShuttlerLogo,
     link: 'https://my.shuttlers.co/auth/general/register',
   },
-  {
-    id: 2,
-    image: CarbonBankLogo,
-    link: 'https://getcarbon.co/',
-  },
-  {
-    id: 3,
-    image: MonipointLogo,
-    link: 'https://moniepoint.com/ng/business',
-  },
-  {
-    id: 4,
-    image: ChowdeckLogo,
-    link: 'https://chowdeck.com/',
-  },
-  {
-    id: 5,
-    image: CowrywiseLogo,
-    link: '#',
-  },
 ];
 
 const Sponsors = () => {
