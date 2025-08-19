@@ -59,7 +59,7 @@ const AttendeesRegistration = () => {
         setTimeout(() => {
           navigate('/success');
           window.location.href = 'https://selar.com/575777n591';
-        }, 2000);
+        }, 1000);
       } else {
         toast.error('Something went wrong. Please try again.');
       }
