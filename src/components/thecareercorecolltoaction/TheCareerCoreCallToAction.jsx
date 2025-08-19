@@ -16,7 +16,7 @@ const TheCareerCoreCallToAction = () => {
           Discover how your support can drive professional growth and innovation
         </p>
         <button className="mt-8 px-8 py-4 bg-white text-[#1b2d6b] font-semibold text-lg rounded-full hover:bg-gray-100 transition-all"
-        onClick={()=>{window.location.href = ""}}
+        onClick={()=>{window.location.href = "https://wa.me/7068370038"}}
         >
           Contact Us
           
