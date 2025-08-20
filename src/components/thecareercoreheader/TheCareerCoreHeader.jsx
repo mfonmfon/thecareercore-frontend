@@ -1,21 +1,14 @@
 import { useState } from 'react';
-// import atpng from "../../assets/atpng.png";
 import TccLogo from '../../assets/images/TCC logo.png';
-import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const TheCareerCoreHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSignupOpen, setIsSignupOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const toggleSignup = () => {
-    setIsSignupOpen(!isSignupOpen);
-  };  
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm w-full">
@@ -24,8 +17,7 @@ const TheCareerCoreHeader = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src={TccLogo} alt="Anonymous Therapy" className="h-8 w-auto" />
-              {/* <span className="ml-2 text-xl font-semibold text-gray-800 ">The Career Core</span> */}
+              <img src={TccLogo} alt="The Career Core" className="h-8 w-auto" />
             </Link>
           </div>
 
@@ -43,32 +35,30 @@ const TheCareerCoreHeader = () => {
             <Link to="/partner" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
               Partner
             </Link>
-            <Link to="/guide" 
-            className="inline-flex text-blue-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+            <Link 
+              to="/guide" 
+              className="inline-flex text-blue-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             >
               Your Guide
             </Link>
           </div>
 
-          {/* Sign Up Dropdown */}
+          {/* Desktop Buttons */}
           <div className="hidden md:block relative">
             <button
-              onClick={()=> {window.location.href="Thecareercoreconference@gmail.com"}}
-              className="ml-8 inline-flex items-center px-4 py-2 border border-black text-sm font-medium rounded-md text-black bg-transparent  hover:bg-blue-700 transition-colors duration-200"
+              onClick={() => window.location.href="mailto:Thecareercoreconference@gmail.com"}
+              className="ml-8 inline-flex items-center px-4 py-2 border border-black text-sm font-medium rounded-md text-black bg-transparent hover:bg-blue-700 hover:text-white transition-colors duration-200"
               type="button"
             >
               Become a sponsor
-              {/* <FaChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isSignupOpen ? 'rotate-180' : ''}`} /> */}
             </button>
 
             <button
-              // onClick={toggleSignup}
-              className="ml-8 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+              onClick={() => window.location.href="https://invitte.app/event/special-event/2RF4BY"}
+              className="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
               type="button"
-              onClick={()=> window.location.href="https://invitte.app/event/special-event/2RF4BY"}
             >
               Register Here
-              {/* <FaChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isSignupOpen ? 'rotate-180' : ''}`} /> */}
             </button>
           </div>
 
@@ -90,6 +80,7 @@ const TheCareerCoreHeader = () => {
           </div>
         </div>
       </div>
+
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-md transition-all duration-300">
@@ -130,21 +121,21 @@ const TheCareerCoreHeader = () => {
               Your Guide
             </Link>
             <div className="pt-2 pb-1 border-t border-gray-200">
-              <div className="px-3 py-2 text-base font-medium text-gray-600"></div>
-              <Link
-                to={window.location.href= "https://invitte.app/event/special-event/2RF4BY"}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
-                onClick={toggleMenu}
+              {/* Register (external link) */}
+              <button
+                onClick={() => { toggleMenu(); window.location.href="https://invitte.app/event/special-event/2RF4BY"; }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
               >
-                Register 
-              </Link>
-              <Link
-                to={window.location.href="Thecareercoreconference@gmail.com"}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
-                onClick={toggleMenu}
+                Register
+              </button>
+
+              {/* Sponsor (email link) */}
+              <button
+                onClick={() => { toggleMenu(); window.location.href="mailto:Thecareercoreconference@gmail.com"; }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 Become a Sponsor
-              </Link>
+              </button>
             </div>
           </div>
         </div>

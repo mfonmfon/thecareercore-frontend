@@ -24,7 +24,7 @@ const TheCareerCoreHerosection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 md:mt-10 w-full sm:w-auto">
             <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
-              <Link onClick={()=>{window.location.href="Thecareercoreconference@gmail.com"}}>
+              <Link onClick={()=>{window.location.href="mailto:Thecareercoreconference@gmail.com"}}>
                 Become a Sponsor
               </Link>
               <FaArrowRight className="text-sm" />
