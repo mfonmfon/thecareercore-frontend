@@ -65,7 +65,7 @@ const TheCareerCoreHeader = () => {
               // onClick={toggleSignup}
               className="ml-8 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
               type="button"
-              onClick={()=> navigate('/register')}
+              onClick={()=> window.location.href="https://invitte.app/event/special-event/2RF4BY"}
             >
               Register Here
               {/* <FaChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isSignupOpen ? 'rotate-180' : ''}`} /> */}
@@ -132,7 +132,7 @@ const TheCareerCoreHeader = () => {
             <div className="pt-2 pb-1 border-t border-gray-200">
               <div className="px-3 py-2 text-base font-medium text-gray-600"></div>
               <Link
-                to="/register"
+                to={window.location.href= "https://invitte.app/event/special-event/2RF4BY"}
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
                 onClick={toggleMenu}
               >
