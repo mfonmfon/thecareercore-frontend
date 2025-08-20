@@ -11,7 +11,7 @@ const speakersData = [
   },
   {
     name: 'Omolara Dada',
-    jobTitle: 'Lead Growht and Marketing, Anchor ',
+    jobTitle: 'Lead Growth and Marketing, Anchor ',
     speakersImage: OmolaraDada,
   },
   {
