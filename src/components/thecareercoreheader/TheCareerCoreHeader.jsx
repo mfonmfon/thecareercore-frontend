@@ -53,7 +53,7 @@ const TheCareerCoreHeader = () => {
           {/* Sign Up Dropdown */}
           <div className="hidden md:block relative">
             <button
-              onClick={()=> navigate("/becomeasponsor")}
+              onClick={()=> {window.location.href="Thecareercoreconference@gmail.com"}}
               className="ml-8 inline-flex items-center px-4 py-2 border border-black text-sm font-medium rounded-md text-black bg-transparent  hover:bg-blue-700 transition-colors duration-200"
               type="button"
             >
