@@ -5,11 +5,17 @@ import CarbonBankLogo from '../../assets/images/carbonbank.png'
 import MonipointLogo from '../../assets/images/moniepoint-logo.png'
 import ChowdeckLogo from '../../assets/images/chowdeck-logo.jpeg'
 import CowrywiseLogo from '../../assets/images/cowrywise-logo.png'
+import NviteLogo from '../../assets/images/Invitte Logo.png'
 
 const sponsorsData = [
   {
     id: 1,
     image: ShuttlerLogo,
+    link: 'https://my.shuttlers.co/auth/general/register',
+  },
+  {
+    id: 1,
+    image: NviteLogo,
     link: 'https://my.shuttlers.co/auth/general/register',
   },
 ];
