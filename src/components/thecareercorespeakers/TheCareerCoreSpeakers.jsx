@@ -1,16 +1,18 @@
 import React from 'react'
 import UnknownSpeakerImage from '../../assets/images/UnknownFaceImage.jpg'
+import AdewumiAphonosoImage from '../../assets/images/panel-speakers/Adewumi Alphonso.jpeg'
+import OmolaraDada from '../../assets/images/panel-speakers/OMOLARA DADA.jpg'
 
 const speakersData = [
   {
-    name: 'Coming soon',
-    // jobTitle: 'Coming soon',
-    speakersImage: UnknownSpeakerImage,
+    name: 'ADEWUMI ALPHONSO',
+    jobTitle: 'HR Leader, Business Executive, and Certified Professional Coach',
+    speakersImage: AdewumiAphonosoImage,
   },
   {
-    name: 'Coming soon',
-    // jobTitle: 'Founder, The Career Core',
-    speakersImage: UnknownSpeakerImage,
+    name: 'Omolara Dada',
+    jobTitle: 'Lead Growht and Marketing, Anchor ',
+    speakersImage: OmolaraDada,
   },
   {
     name: 'Coming soon',
