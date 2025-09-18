@@ -35,7 +35,7 @@ const TheCareerCoreHerosection = () => {
               <span className="font-medium">157 Gardens, 157 Ikorodu Road, Onipanu</span>
             </p>
             <p className="text-xs sm:text-sm md:text-base">
-              Saturday, 25th September 2025 &nbsp; | &nbsp; 9:00 AM - 4:00 PM
+              Saturday, 20th September 2025 &nbsp; | &nbsp; 9:00 AM - 4:00 PM
             </p>
           </div>
 
