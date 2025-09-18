@@ -107,14 +107,14 @@ const TheCareerCoreHeader = () => {
               FAQ
             </Link>
             <Link
-              to="/guide"
+              to="/partner"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
               onClick={toggleMenu}
             >
               Partners
             </Link>
             <Link
-              to="/notfound"
+              to="/guide"
               className="block px-3 py-2 rounded-md text-base font-medium text-blue-600 hover:text-blue-700 hover:bg-gray-50 transition-colors duration-200"
               onClick={toggleMenu}
             >
