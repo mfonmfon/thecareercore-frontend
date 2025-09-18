@@ -23,17 +23,17 @@ const RoadMapToEvent = () => {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-extrabold max-w-3xl leading-tight">
-          TAKE CONTROL OF YOUR <br />
-          MERCHANT SERVICES
+          FIND YOUR WAY TO THE <br />
+          CAREER CORE 25 
         </h1>
 
         <p className="text-gray-500 mt-4 max-w-xl">
-          Benefit from 24/7 support and advanced technology tailored to your business needs. 
-          Optimize transactions with our customized solutions.
+          Join us at 157 Gardens, 157 Ikorodu Road, Onipanu, Lagos, Nigerian.<br />
+          Easily locate the venue with our step-by-step directions.
         </p>
 
-        <button className="mt-6 rounded-full bg-black hover:bg-gray-800 px-8 py-3 text-lg">
-          Get Started
+        <button className="mt-6 rounded-full bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg">
+          Get Directions
         </button>
 
         {/* Characters Illustration */}
