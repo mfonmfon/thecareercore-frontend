@@ -62,7 +62,7 @@ const TheCareerCoreSpeakers = () => {
         {speakersData.map((speaker, index) => (
           <div
             key={index}
-            className='rounded-xl duration-300 '
+            className='rounded-full duration-300 '
           >
             {/* Image Container */}
             <div className='p-4 flex justify-center'>
