@@ -11,17 +11,8 @@ const RoadMapToEvent = () => {
           <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
             {/* 💳 */}
           </div>
-          {/* <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
-            🏦
-          </div>
-          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
-            📊
-          </div>
-          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
-            💼
-          </div> */}
+         
         </div>
-
         <h1 className="text-4xl md:text-5xl font-extrabold max-w-3xl leading-tight">
           FIND YOUR WAY TO THE <br />
           CAREER CORE 25 

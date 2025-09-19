@@ -6,13 +6,38 @@ import MonipointLogo from '../../assets/images/moniepoint-logo.png'
 import ChowdeckLogo from '../../assets/images/chowdeck-logo.jpeg'
 import CowrywiseLogo from '../../assets/images/cowrywise-logo.png'
 import NviteLogo from '../../assets/images/Invitte Logo.png'
+import TheNewYaba from '../../assets/venueimage/TheNewYaba.png'
+import LightWork from '../../assets/venueimage/lightwork PNG.png'
+import GrayzLogoPres from '../../assets/venueimage/GrayzLogoPres.png'
+import FirstLogo from '../../assets/venueimage/FirsLogo.jpg'
+
 
 const sponsorsData = [
   {
     id: 1,
-    image: ShuttlerLogo,
-    link: 'https://my.shuttlers.co/auth/general/register',
+    image: TheNewYaba,
+    link: '',
   },
+  {
+    id: 1,
+    image: LightWork,
+    link: '',
+  },
+  {
+    id: 1,
+    image: FirstLogo,
+    link: '',
+  },
+  {
+    id: 1,
+    image: GrayzLogoPres,
+    link: '',
+  },
+  // {
+  //   id: 1,
+  //   image: ShuttlerLogo,
+  //   link: 'https://my.shuttlers.co/auth/general/register',
+  // },
   {
     id: 1,
     image: NviteLogo,
@@ -41,7 +66,7 @@ const Sponsors = () => {
             <img
               src={sponsor.image}
               alt={`Sponsor ${sponsor.id}`}
-              className="h-14 md:h-30 object-contain "
+              className="h-14 md:h-20 object-contain "
             />
           </a>
         ))}

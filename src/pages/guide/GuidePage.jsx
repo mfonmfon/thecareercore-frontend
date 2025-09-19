@@ -8,8 +8,7 @@ const GuidePage = () => {
       {/* <NotFound /> */}
       <RoadMapToEvent />
       <TheCareerCordFooter />
-
-      
+            
     </div>
   )
 }
