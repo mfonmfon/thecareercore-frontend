@@ -12,6 +12,7 @@ import GrayzLogoPres from '../../assets/venueimage/GrayzLogoPres.png'
 import FirstLogo from '../../assets/venueimage/FirsLogo.jpg'
 
 
+
 const sponsorsData = [
   {
     id: 1,
@@ -33,6 +34,7 @@ const sponsorsData = [
     image: GrayzLogoPres,
     link: '',
   },
+  
   // {
   //   id: 1,
   //   image: ShuttlerLogo,
@@ -41,7 +43,7 @@ const sponsorsData = [
   {
     id: 1,
     image: NviteLogo,
-    link: 'https://my.shuttlers.co/auth/general/register',
+    link: '',
   },
 ];
 
@@ -66,7 +68,7 @@ const Sponsors = () => {
             <img
               src={sponsor.image}
               alt={`Sponsor ${sponsor.id}`}
-              className="h-14 md:h-20 object-contain "
+              className="h-14 md:h-30 object-contain "
             />
           </a>
         ))}

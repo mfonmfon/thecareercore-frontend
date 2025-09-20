@@ -6,6 +6,7 @@ import EmmanuelFaithImage from '../../assets/images/speakers/Emmanuel Faith.jpg'
 import KemaOyihImage from '../../assets/images/speakers/Kema Oyih.JPG'
 import OyindaAkinyemiImage from '../../assets/images/speakers/Oyinda Akinyemi.jpg'
 import TemitopeOladokunImage from '../../assets/images/speakers/Temitope Oladokun Headshot.jpeg'
+import DrJoshauAdemuwagun from '../../assets/venueimage/Dr. Joshua A. Ademuwagun (SRF-ICRED).jpg'
 
 const speakersData = [
   {
@@ -39,9 +40,9 @@ const speakersData = [
     speakersImage: TemitopeOladokunImage,
   },
   {
-    name: 'Coming soon',
-    // jobTitle: 'Head of Marketing, Global Brands',
-    speakersImage: UnknownSpeakerImage,
+    name: 'Dr Joshua ',
+    jobTitle: 'Human Resources Director at Pernod Ricard Nigeria',
+    speakersImage: DrJoshauAdemuwagun,
   },
 ]
 const TheCareerCoreSpeakers = () => {
